@@ -1,9 +1,9 @@
 
     function appendNews(data, location){
         location.innerHTML = "";
-        data.map((el)=>{
+        data.map((el) => {
+            
             //Destructuring of object to get value
-
             let {title , description, url,urlToImage, publishedAt } = el;
 
             if(title == null || description == null || urlToImage == null || publishedAt == null){

@@ -3,7 +3,7 @@
    
     
 
-    
+    //https://newsapi.org/v2/everything?q=cricket&sortBy=popularity&language=en&apiKey=39f6d3ad984f4b23905100e49c1ab97f
     
 //Working on quotes api call==================>
 

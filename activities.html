@@ -14,7 +14,7 @@
     <div id="explorenavbar" style="height: 50px; margin-bottom: 50px;">
 		<div id="logodiv" >
 			<a href="index.html">
-				<img id="logo" src="https://playo-website.imgix.net/company/logo1.png?auto=compress,format" alt="playo logo" style="margin-top: 7px;">
+				<img id="logo" src="playo_logo.png" alt="playo logo" style="margin-top: 7px;">
 			  </a>
 		</div>
 
@@ -30,7 +30,7 @@
 
 <!--  -->
         <div id="searchbar" style="margin-bottom: 25px;">
-            <input type="text" id="typesearch" placeholder="Type a city" style="border: 1px solid grey; border-top-left-radius: 2px; border-top-right-radius: 2px;">
+            <input type="text" id="typesearch" placeholder="Type a city" style="border: 1px solid grey; border-top-left-radius: 2px; border-top-right-radius: 2px;"/>
             <button id="searchbtn" >Detect</button>
         </div>
 
@@ -54,500 +54,74 @@
 	container.innerHTML = footer();
 
 
-var  city_names=['Adilabad',
-			'Anantapur',
-			'Chittoor',
-			'Kakinada',
-			'Guntur',
-			'Hyderabad',
-			'Karimnagar',
-			'Khammam',
-			'Krishna',
-			'Kurnool',
-			'Mahbubnagar',
-			'Medak',
-			'Nalgonda',
-			'Nizamabad',
-			'Ongole',
-			'Hyderabad',
-			'Srikakulam',
-			'Nellore',
-			'Visakhapatnam',
-			'Vizianagaram',
-			'Warangal',
-			'Eluru',
-			'Kadapa','Anjaw',
-			'Changlang',
-			'East Siang',
-			'Kurung Kumey',
-			'Lohit',
-			'Lower Dibang Valley',
-			'Lower Subansiri',
-			'Papum Pare',
-			'Tawang',
-			'Tirap',
-			'Dibang Valley',
-			'Upper Siang',
-			'Upper Subansiri',
-			'West Kameng',
-			'West Siang','Baksa',
-			'Barpeta',
-			'Bongaigaon',
-			'Cachar',
-			'Chirang',
-			'Darrang',
-			'Dhemaji',
-			'Dima Hasao',
-			'Dhubri',
-			'Dibrugarh',
-			'Goalpara',
-			'Golaghat',
-			'Hailakandi',
-			'Jorhat',
-			'Kamrup',
-			'Kamrup Metropolitan',
-			'Karbi Anglong',
-			'Karimganj',
-			'Kokrajhar',
-			'Lakhimpur',
-			'Marigaon',
-			'Nagaon',
-			'Nalbari',
-			'Sibsagar',
-			'Sonitpur',
-			'Tinsukia',
-			'Udalguri',
-			'Araria',
-			'Arwal',
-			'Aurangabad',
-			'Banka',
-			'Begusarai',
-			'Bhagalpur',
-			'Bhojpur',
-			'Buxar',
-			'Darbhanga',
-			'East Champaran',
-			'Gaya',
-			'Gopalganj',
-			'Jamui',
-			'Jehanabad',
-			'Kaimur',
-			'Katihar',
-			'Khagaria',
-			'Kishanganj',
-			'Lakhisarai',
-			'Madhepura',
-			'Madhubani',
-			'Munger',
-			'Muzaffarpur',
-			'Nalanda',
-			'Nawada',
-			'Patna',
-			'Purnia',
-			'Rohtas',
-			'Saharsa',
-			'Samastipur',
-			'Saran',
-			'Sheikhpura',
-			'Sheohar',
-			'Sitamarhi',
-			'Siwan',
-			'Supaul',
-			'Vaishali',
-			'West Champaran',
-			'Chandigarh','Bastar',
-			'Bijapur',
-			'Bilaspur',
-			'Dantewada',
-			'Dhamtari',
-			'Durg',
-			'Jashpur',
-			'Janjgir-Champa',
-			'Korba',
-			'Koriya',
-			'Kanker',
-			'Kabirdham (Kawardha)',
-			'Mahasamund',
-			'Narayanpur',
-			'Raigarh',
-			'Rajnandgaon',
-			'Raipur',
-			'Surguja','Dadra and Nagar Haveli',
-      'New Delhi','Ahmedabad',
-			'Amreli district',
-			'Anand',
-			'Banaskantha',
-			'Bharuch',
-			'Bhavnagar',
-			'Dahod',
-			'The Dangs',
-			'Gandhinagar',
-			'Jamnagar',
-			'Junagadh',
-			'Kutch',
-			'Kheda',
-			'Mehsana',
-			'Narmada',
-			'Navsari',
-			'Patan',
-			'Panchmahal',
-			'Porbandar',
-			'Rajkot',
-			'Sabarkantha',
-			'Surendranagar',
-			'Surat',
-			'Vyara',
-			'Vadodara',
-			'Valsad','Ambala',
-			'Bhiwani',
-			'Faridabad',
-			'Fatehabad',
-			'Gurgaon',
-			'Hissar',
-			'Jhajjar',
-			'Jind',
-			'Karnal',
-			'Kaithal',
-			'Kurukshetra',
-			'Mahendragarh',
-			'Mewat',
-			'Palwal',
-			'Panchkula',
-			'Panipat',
-			'Rewari',
-			'Rohtak',
-			'Sirsa',
-			'Sonipat',
-			'Yamuna Nagar','Bilaspur',
-			'Chamba',
-			'Hamirpur',
-			'Kangra',
-			'Kinnaur',
-			'Kullu',
-			'Lahaul and Spiti',
-			'Mandi',
-			'Shimla',
-			'Sirmaur',
-			'Solan',
-			'Una','Anantnag',
-			'Badgam',
-			'Bandipora',
-			'Baramulla',
-			'Doda',
-			'Ganderbal',
-			'Jammu',
-			'Kargil',
-			'Kathua',
-			'Kishtwar',
-			'Kupwara',
-			'Kulgam',
-			'Leh',
-			'Poonch',
-			'Pulwama',
-			'Rajauri',
-			'Ramban',
-			'Reasi',
-			'Samba',
-			'Shopian',
-			'Srinagar',
-			'Udhampur','Bokaro',
-			'Chatra',
-			'Deoghar',
-			'Dhanbad',
-			'Dumka',
-			'East Singhbhum',
-			'Garhwa',
-			'Giridih',
-			'Godda',
-			'Gumla',
-			'Hazaribag',
-			'Jamtara',
-			'Khunti',
-			'Koderma',
-			'Latehar',
-			'Lohardaga',
-			'Pakur',
-			'Palamu',
-			'Ramgarh',
-			'Ranchi',
-			'Sahibganj',
-			'Seraikela Kharsawan',
-			'Simdega',
-			'West Singhbhum','Bagalkot',
-			'Bangalore Rural',
-			'Bangalore Urban',
-			'Belgaum',
-			'Bellary',
-			'Bidar',
-			'Bijapur',
-			'Chamarajnagar',
-			'Chikkamagaluru',
-			'Chikkaballapur',
-			'Chitradurga',
-			'Davanagere',
-			'Dharwad',
-			'Dakshina Kannada',
-			'Gadag',
-			'Gulbarga',
-			'Hassan',
-			'Haveri district',
-			'Kodagu',
-			'Kolar',
-			'Koppal',
-			'Mandya',
-			'Mysore',
-			'Raichur',
-			'Shimoga',
-			'Tumkur',
-			'Udupi',
-			'Uttara Kannada',
-			'Ramanagara',
-			'Yadgir','Alappuzha',
-			'Ernakulam',
-			'Idukki',
-			'Kannur',
-			'Kasaragod',
-			'Kollam',
-			'Kottayam',
-			'Kozhikode',
-			'Malappuram',
-			'Palakkad',
-			'Pathanamthitta',
-			'Thrissur',
-			'Thiruvananthapuram',
-			'Wayanad','Alirajpur',
-			'Anuppur',
-			'Ashok Nagar',
-			'Balaghat',
-			'Barwani',
-			'Betul',
-			'Bhind',
-			'Bhopal',
-			'Burhanpur',
-			'Chhatarpur',
-			'Chhindwara',
-			'Damoh',
-			'Datia',
-			'Dewas',
-			'Dhar',
-			'Dindori',
-			'Guna',
-			'Gwalior',
-			'Harda',
-			'Hoshangabad',
-			'Indore',
-			'Jabalpur',
-			'Jhabua',
-			'Katni',
-			'Khandwa (East Nimar)',
-			'Khargone (West Nimar)',
-			'Mandla',
-			'Mandsaur',
-			'Morena',
-			'Narsinghpur',
-			'Neemuch',
-			'Panna',
-			'Rewa',
-			'Rajgarh',
-			'Ratlam',
-			'Raisen',
-			'Sagar',
-			'Satna',
-			'Sehore',
-			'Seoni',
-			'Shahdol',
-			'Shajapur',
-			'Sheopur',
-			'Shivpuri',
-			'Sidhi',
-			'Singrauli',
-			'Tikamgarh',
-			'Ujjain',
-			'Umaria',
-			'Vidisha','Ahmednagar',
-			'Akola',
-			'Amravati',
-			'Aurangabad',
-			'Bhandara',
-			'Beed',
-			'Buldhana',
-			'Chandrapur',
-			'Dhule',
-			'Gadchiroli',
-			'Gondia',
-			'Hingoli',
-			'Jalgaon',
-			'Jalna',
-			'Kolhapur',
-			'Latur',
-			'Mumbai City',
-			'Mumbai suburban',
-			'Nandurbar',
-			'Nanded',
-			'Nagpur',
-			'Nashik',
-			'Osmanabad',
-			'Parbhani',
-			'Pune',
-			'Raigad',
-			'Ratnagiri',
-			'Sindhudurg',
-			'Sangli',
-			'Solapur',
-			'Satara',
-			'Thane',
-			'Wardha',
-			'Washim',
-			'Yavatmal',
-			'Amritsar',
-			'Barnala',
-			'Bathinda',
-			'Firozpur',
-			'Faridkot',
-			'Fatehgarh Sahib',
-			'Fazilka',
-			'Gurdaspur',
-			'Hoshiarpur',
-			'Jalandhar',
-			'Kapurthala',
-			'Ludhiana',
-			'Mansa',
-			'Moga',
-			'Sri Muktsar Sahib',
-			'Pathankot',
-			'Patiala',
-			'Rupnagar',
-			'Ajitgarh (Mohali)',
-			'Sangrur',
-			'Nawanshahr',
-			'Tarn Taran','Ajmer',
-			'Alwar',
-			'Bikaner',
-			'Barmer',
-			'Banswara',
-			'Bharatpur',
-			'Baran',
-			'Bundi',
-			'Bhilwara',
-			'Churu',
-			'Chittorgarh',
-			'Dausa',
-			'Dholpur',
-			'Dungapur',
-			'Ganganagar',
-			'Hanumangarh',
-			'Jhunjhunu',
-			'Jalore',
-			'Jodhpur',
-			'Jaipur',
-			'Jaisalmer',
-			'Jhalawar',
-			'Karauli',
-			'Kota',
-			'Nagaur',
-			'Pali',
-			'Pratapgarh',
-			'Rajsamand',
-			'Sikar',
-			'Sawai Madhopur',
-			'Sirohi',
-			'Tonk',
-			'Udaipur','Agra',
-			'Allahabad',
-			'Aligarh',
-			'Ambedkar Nagar',
-			'Auraiya',
-			'Azamgarh',
-			'Barabanki',
-			'Budaun',
-			'Bagpat',
-			'Bahraich',
-			'Bijnor',
-			'Ballia',
-			'Banda',
-			'Balrampur',
-			'Bareilly',
-			'Basti',
-			'Bulandshahr',
-			'Chandauli',
-			'Chhatrapati Shahuji Maharaj Nagar',
-			'Chitrakoot',
-			'Deoria',
-			'Etah',
-			'Kanshi Ram Nagar',
-			'Etawah',
-			'Firozabad',
-			'Farrukhabad',
-			'Fatehpur',
-			'Faizabad',
-			'Gautam Buddh Nagar',
-			'Gonda',
-			'Ghazipur',
-			'Gorakhpur',
-			'Ghaziabad',
-			'Hamirpur',
-			'Hardoi',
-			'Mahamaya Nagar',
-			'Jhansi',
-			'Jalaun',
-			'Jyotiba Phule Nagar',
-			'Jaunpur district',
-			'Ramabai Nagar (Kanpur Dehat)',
-			'Kannauj',
-			'Kanpur',
-			'Kaushambi',
-			'Kushinagar',
-			'Lalitpur',
-			'Lakhimpur Kheri',
-			'Lucknow',
-			'Mau',
-			'Meerut',
-			'Maharajganj',
-			'Mahoba',
-			'Mirzapur',
-			'Moradabad',
-			'Mainpuri',
-			'Mathura',
-			'Muzaffarnagar',
-			'Panchsheel Nagar district (Hapur)',
-			'Pilibhit',
-			'Shamli',
-			'Pratapgarh',
-			'Rampur',
-			'Raebareli',
-			'Saharanpur',
-			'Sitapur',
-			'Shahjahanpur',
-			'Sant Kabir Nagar',
-			'Siddharthnagar',
-			'Sonbhadra',
-			'Sant Ravidas Nagar',
-			'Sultanpur',
-			'Shravasti',
-			'Unnao',
-			'Varanasi','Almora',
-			'Bageshwar',
-			'Chamoli',
-			'Champawat',
-			'Dehradun',
-			'Haridwar',
-			'Nainital',
-			'Pauri Garhwal',
-			'Pithoragarh',
-			'Rudraprayag',
-			'Tehri Garhwal',
-			'Udham Singh Nagar',
-			'Uttarkashi'];
-      city_names.sort((a,b)=>a-b);
-      //console.log(city_names)
+	//console.log(city_names)
+function displayCity(ccc){
+	var showcities=document.querySelector("#citynames");
+	showcities.innerHTML=""
 
-     for(var i=0; i<city_names.length; i++){
-        var showcities=document.querySelector("#citynames");
-     var p=document.createElement("p");
-     var line=document.createElement("hr");
-         p.innerHTML=city_names[i];
-         showcities.append(p,line);
-     }
+	ccc.map(({name})=>{
+		var p=document.createElement("p");
+		p.setAttribute("class","cityname");
+		p.textContent = name;
+		p.style.cursor = "pointer";
+
+		p.addEventListener("click", ()=>{
+			let data = {
+				city: p.textContent,
+			};
+
+			localStorage.setItem("name", JSON.stringify(data));
+			console.log(data)
+			window.location.href = "explore.html";
+		});
+		
+
+		var line=document.createElement("hr");
+
+		showcities.append(p,line);
+	})
+}
+
+	document.getElementById("typesearch").addEventListener("keyup", () => {
+		debounceFun(debounce);
+	});
+
+	let id;
+
+	let debounceFun = (deb) => {
+		if (id) {
+			clearTimeout(id);
+		}
+		id = setTimeout(() => {
+			deb();
+		}, 1000);
+	};
+
+	fetchCities()
+	async function fetchCities() {
+			// let city = document.getElementById("typesearch").value;
+			//  console.log(city);
+			let res = await fetch(`http://localhost:3000/city-name`)
+			let data = await res.json();
+
+			console.log(data);
+			displayCity(data);
+		}
+	
+
+	
+	async function debounce(){
+		 let city=document.getElementById("typesearch").value;
+		//  console.log(city);
+		let res=await fetch(`http://localhost:3000/city-name?q=${city}`)
+		let data=await res.json();
+		
+		console.log(data);
+		displayCity(data);
+	 }
+
+
+
 
 	//  popupstartshere-----------------------
 // var modal = document.getElementById("myModal");
@@ -635,16 +209,28 @@ var  city_names=['Adilabad',
 //     window.location.href = "explore.html";
 //   }
 
+	// let id;
+	// let find = (d) => {
+	// 	if (id) {
+	// 		// document.querySelector("error-container").innerHTML = null;
+	// 		clearTimeout(id);
+	// 	}
+	// 	id = setTimeout(() => {
+	// 		d();
+	// 	}, 300);
+	// };
 
-document.querySelector("#searchbtn").addEventListener("click",()=>{
-    let data = {
-      city: document.getElementById("typesearch").value,
+
+
+// function selecting(){
+//     let data = {
+//       city: document.getElementById("typesearch").value,
      
-    };
+//     };
 
-    let location = localStorage.setItem("name", JSON.stringify(data));
-    window.location.href = "explore.html";
-})
+//     let location = localStorage.setItem("name", JSON.stringify(data));
+//     window.location.href = "explore.html";
+// }
 
 
 
