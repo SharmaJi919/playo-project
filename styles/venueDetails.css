@@ -29,7 +29,12 @@
         height: 45px; 
         margin-left: -60%;
     }
-    
+    #container>#empty{
+        width: 30%;
+        height: 100%;
+        margin: auto;
+        
+    }
     #pplogo{
         width: 35px; 
         height: 35px;

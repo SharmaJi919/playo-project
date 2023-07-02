@@ -261,7 +261,7 @@
     .dynamic-news{
         border: 1px solid transparent;
         min-height: 70px;
-        display: grid;
+        display: block;
         grid-template-columns: 45.5% 45.5%;
         justify-content: space-between;
         padding-right: 25px;
@@ -270,8 +270,15 @@
 
     /* News Box */
     .dynamic-news>div{
-        height: 292px;
+        display: flex;
+        justify-content: space-between;
+        height: 220px;
         border: 1px solid transparent;
+        padding: 10px;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        margin-top: 20px;
+        gap: 10px;
+        border-radius: 8px;
     }
 
     .dynamic-news>div>div:nth-child(1){
@@ -280,12 +287,15 @@
 
     /* Image  */
     .dynamic-news>div>div:nth-child(1)>img{
-        height: 160px;
-        width: 100%;
+        height: 220px;
+        width: 280px;
         margin-bottom: 0px;
+        border-radius: 8px;
     }
 
     /* Date Div */
+
+
     .dynamic-news>div>div:nth-child(2){
         border: 1px solid transparent;
         margin-top: 0px;

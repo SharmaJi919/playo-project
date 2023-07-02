@@ -16,10 +16,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
     <!-- Font Aswam -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+<style>
+    .material-symbols-outlined {
+        font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 48
+    }
+    #buttons{
+        display: flex;
+        justify-content: space-around;
+        width: 25%;
+        margin: auto;
+        margin-top: 30px;
+    }
+</style>
 
 
 </head>
@@ -38,7 +57,7 @@
             </div>
 
             <div>
-                <input type="text" name="" id="search" placeholder="Search...">
+                <input type="text" name="" id="search" placeholder="Search..." >
                 <i class="fa fa-search" aria-hidden="true"></i>
             </div>
 
@@ -63,12 +82,12 @@
         <div class="navbar">
             <div>
 
-                <div id="sports-news">SPORTS</div>
-                <div id="health-news">HEALTH</div>
-                <div>CRICKET</div>
-                <div>FOOTBALL</div>
-                <div>TENNIS</div>
-                <div>QUIZ</div>
+                <div id="sports">SPORTS</div>
+                <div id="health">HEALTH</div>
+                <div id="cricket">CRICKET</div>
+                <div id="football">FOOTBALL</div>
+                <div id="tennis">TENNIS</div>
+                <div id="quiz">QUIZ</div>
                 
 
             </div>
@@ -86,9 +105,9 @@
 
                     <!-- Static News -->
 
-                    <div class="static-news">
+                    <!-- <div class="static-news"> -->
 
-                        <div id="first-blog">
+                        <!-- <div id="first-blog">
                             <img src="https://blog.playo.co/wp-content/uploads/2021/10/playo-wants-you-351x185.jpg" alt="">
                             <div>
                                 <div>NOVEMBER 16,2021</div>
@@ -106,7 +125,7 @@
                             </div>
                             <div>COVID SAFETY GUIDELINES Playing during Omicron Scare?... </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Dynamic News -->
                     <div class="dynamic-news">
@@ -124,6 +143,15 @@
 
 
 
+                    </div>
+                    <div id="buttons">
+                        <button id="previous"><span class="material-symbols-outlined">
+                            arrow_back_ios
+                        </span></button>
+                        <h3 id="pagecount">1</h3>
+                        <button id="next"><span class="material-symbols-outlined">
+                            arrow_forward_ios
+                        </span></button>
                     </div>
 
 
